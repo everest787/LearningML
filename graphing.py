@@ -5,6 +5,9 @@ import seaborn as sns
 # Histogram
 sns.histplot(ad_data['Age'],bins=30);
 
+g = sns.FacetGrid(df,hue="Private",palette='coolwarm')
+g = g.map(plt.hist,'Outstate',bins=20)
+
 # JointPlot
 sns.jointplot(x='total_bill',y='tip',data=tips,kind='scatter') #kind='hex','reg'
 
